@@ -51,4 +51,4 @@ Create a new bookmark in your browser (Chrome!) and then save the following code
 </code></pre>
 
 ###The git repo for this project is here:
-<pre><code></code></pre>
+<pre><code>https://github.com/guardian/interactive-visual-story-template</code></pre>
