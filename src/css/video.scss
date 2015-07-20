@@ -1,0 +1,62 @@
+.gv-video-player {
+	position: relative;
+
+	video {
+		width: 100%;
+	}
+
+	.gv-poster-image {
+		width: 100%;
+	}
+
+	.gv-video-cover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.gv-video-play {
+		width: 70px;
+		height: 70px;
+		margin-left: auto;
+  		margin-right: auto;
+  		display: block;
+  		top: 50%;
+  		position: relative;
+  		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+
+
+}
+
+.gv-state-paused {
+	.guPause {
+		opacity: 0;
+	}
+	.guPlay {
+		opacity: 1;
+	}
+}
+
+.gv-state-playing {
+	.gv-video-play {
+		opacity: 0;
+	}
+
+	.guPause {
+		opacity: 1;
+	}
+	.guPlay {
+		opacity: 0;
+	}
+}
+
+.gv-state-hovering {
+	.gv-video-play {
+		opacity: 1;
+	}
+}

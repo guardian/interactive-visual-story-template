@@ -1,0 +1,33 @@
+
+<div class='gv-row'>
+	
+	{{#if_eq row.layout "flex"}}
+
+			{{#each blocks}}			
+				{{#if_eq this.layout "flex"}}
+	
+					{{>block}} 
+				{{/if_eq}}			
+			{{/each}}
+
+			<div class='gv-layout-flex'>
+				{{#each blocks}}			
+					{{#if_not_eq layout "flex"}}
+						{{>block}}
+					{{/if_not_eq}}			
+				{{/each}}
+			</div>
+
+	{{else}}
+
+		{{#each blocks}}			
+				
+			{{>block}}
+				
+		{{/each}}
+
+	{{/if_eq}}
+
+
+
+</div>

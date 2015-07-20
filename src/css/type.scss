@@ -1,0 +1,101 @@
+.guvisual-wrapper {
+	border-top: none;
+	margin: 0 auto;
+
+	h2 {
+		@include fs-headline(5);
+		font-weight: 900;
+        margin: 0;
+	}
+	
+	h3 {
+        @include fs-header(2);
+        margin: 0;
+    }
+
+    p {
+        @include fs-bodyCopy(2);
+        margin: 0 0 10px 0;
+        max-width: 640px;
+    }
+
+    p.gv-credit-text {
+    	 @include fs-textSans(2);
+    	 color: #767676;
+    	
+    }
+
+    span.gv-quote-credit {
+    	@include fs-bodyCopy(2);
+    	color: #767676;
+    	margin-top: 18px;
+    }
+
+    p.gv-quote {
+    	@include fs-headline(4);
+    	margin: 0 0 10px 0;
+    }
+
+    em {
+    	@include fs-header(2);
+    	font-style: normal;
+    	color: #333;
+    }
+
+    
+ 
+
+    @media(min-width:660px){
+         .text-shadow {
+	    	text-shadow: 0 0 20px rgba(0,0,0,0.8);
+	    }
+    }
+
+
+	
+		
+	@media(min-width:980px){
+
+
+		h2 {
+			@include fs-headline(9);
+			font-weight: 900;
+		}
+		
+		h3 {
+	        @include fs-header(3);
+	    }
+
+	    p {
+	        @include fs-bodyCopy(2);
+	    }
+
+	    p.gv-credit-text {
+    		@include fs-textSans(2);
+   		}
+
+   		p.gv-quote-credit {
+	    	@include fs-bodyCopy(3);
+	    }
+
+	    p.gv-quote {
+	    	@include fs-headline(6);
+	    	margin: 0 0 20px 0;
+	    }
+
+	    em {
+	    	@include fs-header(3);
+	    }
+
+
+
+	}
+	
+	@media(min-width:1140px){
+		
+	}
+	
+	@media(min-width:1300px){
+		
+	}
+}

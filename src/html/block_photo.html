@@ -1,0 +1,40 @@
+
+{{#if_eq this.layout "lead"}}
+
+	<div class="gv-lead-photo">
+		<div class='gv-image-container gv-lead-photo-img gv-asset' data-asset-type='image-lead' data-url='{{url}}' {{getImageData}}>
+
+			<div class='gv-expand'></div>
+		</div>
+		{{#if primarytext}}
+		<div class='lead-text {{customclass}}'>
+				
+			{{#if primarytext}}
+				<h2>{{{primarytext}}}</h2>
+			{{/if}}
+
+			{{#if secondarytext}}
+				<p>{{{secondarytext}}}</p>
+			{{/if}}
+
+		</div>
+		{{/if}}
+
+	</div>
+
+
+{{else}}
+	
+	<div class="gv-photo">
+		<div class='gv-image-container gv-asset' data-asset-type='image' data-url='{{url}}' {{getImageData}}>
+			<div class='gv-expand'></div>
+		</div>
+	</div>
+
+	{{#if primarytext}}
+		<p>{{{primarytext}}} {{#if secondarytext}}<span class="gv-quote-credit">{{{secondarytext}}}</span>{{/if}}</p>
+	{{/if}}
+
+{{/if_eq}}
+
+

@@ -1,0 +1,163 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/Users/fcage/projects/interactive-photo-story',
+5 verbose install   [ 'reqwest',
+5 verbose install     'autoprefixer-core',
+5 verbose install     'csswring',
+5 verbose install     'grunt',
+5 verbose install     'grunt-autoprefixer',
+5 verbose install     'grunt-aws',
+5 verbose install     'grunt-webpack',
+5 verbose install     'json-loader',
+5 verbose install     'raw-loader',
+5 verbose install     'grunt-cache-bust',
+5 verbose install     'grunt-contrib-clean',
+5 verbose install     'grunt-contrib-connect',
+5 verbose install     'grunt-contrib-copy',
+5 verbose install     'grunt-contrib-cssmin',
+5 verbose install     'grunt-contrib-jshint',
+5 verbose install     'grunt-contrib-requirejs',
+5 verbose install     'grunt-contrib-uglify',
+5 verbose install     'grunt-contrib-watch',
+5 verbose install     'grunt-postcss',
+5 verbose install     'grunt-replace',
+5 verbose install     'grunt-sass',
+5 verbose install     'grunt-text-replace',
+5 verbose install     'jit-grunt' ] ]
+6 info preinstall interactive-photo-story@0.0.6
+7 verbose readDependencies using package.json deps
+8 verbose already installed skipping grunt-aws@^0.5.3 /Users/fcage/projects/interactive-photo-story
+9 verbose already installed skipping grunt-webpack@^1.0.8 /Users/fcage/projects/interactive-photo-story
+10 verbose already installed skipping json-loader@^0.5.2 /Users/fcage/projects/interactive-photo-story
+11 verbose already installed skipping raw-loader@^0.5.1 /Users/fcage/projects/interactive-photo-story
+12 verbose already installed skipping grunt-cache-bust@^0.4.13 /Users/fcage/projects/interactive-photo-story
+13 verbose already installed skipping grunt-contrib-clean@~0.6.0 /Users/fcage/projects/interactive-photo-story
+14 verbose already installed skipping grunt-contrib-connect@~0.10.1 /Users/fcage/projects/interactive-photo-story
+15 verbose already installed skipping grunt-contrib-copy@~0.8.0 /Users/fcage/projects/interactive-photo-story
+16 verbose already installed skipping grunt-contrib-cssmin@^0.12.3 /Users/fcage/projects/interactive-photo-story
+17 verbose already installed skipping grunt-contrib-jshint@~0.11.2 /Users/fcage/projects/interactive-photo-story
+18 verbose already installed skipping grunt-contrib-requirejs@~0.4.4 /Users/fcage/projects/interactive-photo-story
+19 verbose already installed skipping grunt-contrib-uglify@^0.9.1 /Users/fcage/projects/interactive-photo-story
+20 verbose already installed skipping grunt-contrib-watch@~0.6.1 /Users/fcage/projects/interactive-photo-story
+21 verbose already installed skipping grunt-postcss@^0.5.1 /Users/fcage/projects/interactive-photo-story
+22 verbose already installed skipping grunt-replace@^0.9.2 /Users/fcage/projects/interactive-photo-story
+23 verbose cache add [ 'grunt-sass@^3.3.0', null ]
+24 verbose cache add name=undefined spec="grunt-sass@^3.3.0" args=["grunt-sass@^3.3.0",null]
+25 verbose parsed url { protocol: null,
+25 verbose parsed url   slashes: null,
+25 verbose parsed url   auth: null,
+25 verbose parsed url   host: null,
+25 verbose parsed url   port: null,
+25 verbose parsed url   hostname: null,
+25 verbose parsed url   hash: null,
+25 verbose parsed url   search: null,
+25 verbose parsed url   query: null,
+25 verbose parsed url   pathname: 'grunt-sass@^3.3.0',
+25 verbose parsed url   path: 'grunt-sass@^3.3.0',
+25 verbose parsed url   href: 'grunt-sass@^3.3.0' }
+26 verbose already installed skipping grunt-text-replace@^0.4.0 /Users/fcage/projects/interactive-photo-story
+27 verbose already installed skipping jit-grunt@^0.9.1 /Users/fcage/projects/interactive-photo-story
+28 verbose cache add name="grunt-sass" spec="^3.3.0" args=["grunt-sass","^3.3.0"]
+29 verbose parsed url { protocol: null,
+29 verbose parsed url   slashes: null,
+29 verbose parsed url   auth: null,
+29 verbose parsed url   host: null,
+29 verbose parsed url   port: null,
+29 verbose parsed url   hostname: null,
+29 verbose parsed url   hash: null,
+29 verbose parsed url   search: null,
+29 verbose parsed url   query: null,
+29 verbose parsed url   pathname: '^3.3.0',
+29 verbose parsed url   path: '^3.3.0',
+29 verbose parsed url   href: '^3.3.0' }
+30 verbose addNamed [ 'grunt-sass', '^3.3.0' ]
+31 verbose addNamed [ null, '>=3.3.0-0 <4.0.0-0' ]
+32 silly lockFile 03bb5e7f-grunt-sass-3-3-0 grunt-sass@^3.3.0
+33 verbose lock grunt-sass@^3.3.0 /Users/fcage/.npm/03bb5e7f-grunt-sass-3-3-0.lock
+34 silly addNameRange { name: 'grunt-sass',
+34 silly addNameRange   range: '>=3.3.0-0 <4.0.0-0',
+34 silly addNameRange   hasData: false }
+35 verbose already installed skipping reqwest@^1.1.5 /Users/fcage/projects/interactive-photo-story
+36 verbose already installed skipping autoprefixer-core@^5.2.0 /Users/fcage/projects/interactive-photo-story
+37 verbose request where is /grunt-sass
+38 verbose request registry https://registry.npmjs.org/
+39 verbose request id 48f0e0e21b13be41
+40 verbose url raw /grunt-sass
+41 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-sass' ]
+42 verbose url resolved https://registry.npmjs.org/grunt-sass
+43 verbose request where is https://registry.npmjs.org/grunt-sass
+44 info trying registry request attempt 1 at 08:59:19
+45 verbose etag "RQ3SAPA0VV65R0INXOBYOBXQ"
+46 http GET https://registry.npmjs.org/grunt-sass
+47 verbose already installed skipping csswring@^3.0.5 /Users/fcage/projects/interactive-photo-story
+48 verbose already installed skipping grunt@^0.4.5 /Users/fcage/projects/interactive-photo-story
+49 verbose already installed skipping grunt-autoprefixer@^3.0.3 /Users/fcage/projects/interactive-photo-story
+50 http 304 https://registry.npmjs.org/grunt-sass
+51 silly registry.get cb [ 304,
+51 silly registry.get   { date: 'Wed, 15 Jul 2015 07:59:18 GMT',
+51 silly registry.get     via: '1.1 varnish',
+51 silly registry.get     'cache-control': 'max-age=60',
+51 silly registry.get     etag: '"RQ3SAPA0VV65R0INXOBYOBXQ"',
+51 silly registry.get     age: '54',
+51 silly registry.get     connection: 'keep-alive',
+51 silly registry.get     'x-served-by': 'cache-lcy1124-LCY',
+51 silly registry.get     'x-cache': 'HIT',
+51 silly registry.get     'x-cache-hits': '1',
+51 silly registry.get     'x-timer': 'S1436947158.528689,VS0,VE0',
+51 silly registry.get     vary: 'Accept' } ]
+52 verbose etag https://registry.npmjs.org/grunt-sass from cache
+53 silly addNameRange number 2 { name: 'grunt-sass',
+53 silly addNameRange   range: '>=3.3.0-0 <4.0.0-0',
+53 silly addNameRange   hasData: true }
+54 silly addNameRange versions [ 'grunt-sass',
+54 silly addNameRange   [ '0.1.0',
+54 silly addNameRange     '0.2.1',
+54 silly addNameRange     '0.2.2',
+54 silly addNameRange     '0.2.3',
+54 silly addNameRange     '0.2.4',
+54 silly addNameRange     '0.2.5',
+54 silly addNameRange     '0.3.0',
+54 silly addNameRange     '0.4.0',
+54 silly addNameRange     '0.4.1',
+54 silly addNameRange     '0.5.0',
+54 silly addNameRange     '0.6.0',
+54 silly addNameRange     '0.6.1',
+54 silly addNameRange     '0.7.0',
+54 silly addNameRange     '0.8.0',
+54 silly addNameRange     '0.8.1',
+54 silly addNameRange     '0.9.0',
+54 silly addNameRange     '0.10.0',
+54 silly addNameRange     '0.11.0',
+54 silly addNameRange     '0.12.0',
+54 silly addNameRange     '0.12.1',
+54 silly addNameRange     '0.13.0',
+54 silly addNameRange     '0.13.1',
+54 silly addNameRange     '0.14.0',
+54 silly addNameRange     '0.14.1',
+54 silly addNameRange     '0.14.2',
+54 silly addNameRange     '0.15.0',
+54 silly addNameRange     '0.16.0',
+54 silly addNameRange     '0.16.1',
+54 silly addNameRange     '0.17.0',
+54 silly addNameRange     '0.18.0',
+54 silly addNameRange     '0.18.1',
+54 silly addNameRange     '1.0.0' ] ]
+55 silly lockFile 03bb5e7f-grunt-sass-3-3-0 grunt-sass@^3.3.0
+56 silly lockFile 03bb5e7f-grunt-sass-3-3-0 grunt-sass@^3.3.0
+57 error notarget No compatible version found: grunt-sass@'>=3.3.0-0 <4.0.0-0'
+57 error notarget Valid install targets:
+57 error notarget ["0.1.0","0.2.1","0.2.2","0.2.3","0.2.4","0.2.5","0.3.0","0.4.0","0.4.1","0.5.0","0.6.0","0.6.1","0.7.0","0.8.0","0.8.1","0.9.0","0.10.0","0.11.0","0.12.0","0.12.1","0.13.0","0.13.1","0.14.0","0.14.1","0.14.2","0.15.0","0.16.0","0.16.1","0.17.0","0.18.0","0.18.1","1.0.0"]
+57 error notarget
+57 error notarget This is most likely not a problem with npm itself.
+57 error notarget In most cases you or one of your dependencies are requesting
+57 error notarget a package version that doesn't exist.
+58 error System Darwin 13.4.0
+59 error command "node" "/usr/local/bin/npm" "install"
+60 error cwd /Users/fcage/projects/interactive-photo-story
+61 error node -v v0.10.35
+62 error npm -v 1.4.28
+63 error code ETARGET
+64 verbose exit [ 1, true ]

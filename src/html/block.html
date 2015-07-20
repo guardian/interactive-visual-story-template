@@ -1,0 +1,17 @@
+<div class="gv-{{layout}} gv-{{blocktype}}">
+	{{#if_eq blocktype "photo"}}
+		{{> photoBlock }}
+	{{else if_eq blocktype "quote"}}
+		{{> quoteBlock }}
+	{{else if_eq blocktype "text"}}
+		{{> textBlock }}
+	{{else if_eq blocktype "title"}}
+		{{> titleBlock }}
+	{{else if_eq blocktype "audio"}}
+		{{> audioBlock }}
+	{{else if_eq blocktype "iframe"}}
+		{{> iframeBlock }}
+	{{else if_eq blocktype "video"}}
+		{{> videoBlock }}
+	{{/if_eq}}
+</div>

@@ -1,0 +1,75 @@
+.content--interactive .element-interactive {
+    background-color: transparent;
+}
+
+.text-white {
+	color: #fff;
+
+    p {
+        color: #fff;
+    }
+
+    .content__dateline {
+        color: #fff;
+    }
+
+    .content__standfirst p {
+        color: #fff;
+    }
+
+    a, a:hover {
+        color: #fff;
+    }
+
+    a.tone-colour {
+        color: #fff;
+    }
+}
+
+.text-black {
+	color: #333;
+}
+
+@each $color, $hex in $pasteup-palette {
+    .bg-#{$color} {
+        background-color: $hex;
+
+        .guInteractive {
+            border-bottom: 1px solid rgba(255,255,255,.5);
+        }
+    }
+
+    .text-#{$color} {
+        color: $hex;
+
+        p {
+            color: $hex;
+        }
+
+        .content__dateline {
+            color: $hex;
+        }
+
+        .content__standfirst p {
+            color: $hex;
+        }
+
+        a, a:hover {
+            color: $hex;
+        }
+
+        a.tone-colour {
+            color: $hex;
+        }
+    }
+}
+
+
+ @media(min-width:660px){
+
+    @each $color, $hex in $pasteup-palette {
+        .gv-lead-photo .bg-#{$color} {
+            background-color: transparent;
+        }
+    }
+ }

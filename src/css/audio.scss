@@ -1,0 +1,47 @@
+.gv-asset.gv-audio-player {
+	background: transparent;
+}
+
+.gv-audio-player {
+	width: 70px;
+	height: 70px;
+	float: left;
+	margin: 0 20px 10px 0;
+	cursor: pointer;
+}
+
+.gv-play, .gv-pause {
+	opacity: 0;
+}
+
+.gv-state-paused {
+	.gv-pause {
+		opacity: 0;
+	}
+
+	.gv-play {
+		opacity: 1;
+	}
+}
+
+.gv-state-playing {
+	.gv-pause {
+		opacity: 1;
+	}
+
+	.gv-play {
+		opacity: 0;
+	}
+}
+
+.audio-outer-circle {
+	fill: colour('neutral-8');
+}
+
+.audio-inner-circle {
+	fill: colour('multimedia-main-2');
+}
+
+.audio-progress-circle {
+	fill: colour('multimedia-main-2');
+}
