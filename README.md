@@ -13,7 +13,7 @@ This layout tool generates a series of rows with blocks nested within each row
 
 - To <b>create a new row of blocks</b>, select the 'row' in the block_type column. Then create blocks in the rows that follow
 - To <b>create a new block within a row</b>, select the block type you wish to create from the block_type dropdown. Populate the related fields
-    - <b>Layout</b>: select the width of the block you wish to create. Note that full/half blocks cannot be combined with flex blocks
+    - <b>Layout</b>: select the width of the block you wish to create. Note that full/half blocks cannot be combined with flex blocks. Follow the layout grid below
     - <b>Primary text</b>: Typically header or large quote text
     - <b>Secondary text</b>: Typically paragraph or credit text depending on the block type
     - <b>URL</b>: 
@@ -22,6 +22,7 @@ This layout tool generates a series of rows with blocks nested within each row
         - For audio, include the url for the mp3 file
     - <b>Custom styles</b>: Use this sparingly. Add class names separated by a space from the list below to change the lead photo text colour, position, shadow, and background colour for mobile
 
+![Alt text](/offline/layout_guide.png?raw=true "Layout guide")
 
 ###Preview the visual story
 Copy the url below and replace the [SPREADSHEET] with the spreadsheet key for your project
