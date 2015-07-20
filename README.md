@@ -1,157 +1,54 @@
-# interactive-photo-story 
-Guardian interactive project.
+#Visual story template
 
-## This template is powered by the format structure of this Google Spreadsheet. Cope the spreadsheet to start a new visual project
-
-https://docs.google.com/spreadsheets/d/1x_YrJu5g5r4NuiXysFe5bMcFdcKEKTCyGUz29eYklWQ/edit#gid=67028220
-
-## Getting started
-If you haven't already installed the following requirements:
-
-* [nodejs](http://nodejs.org/download/)
-* [grunt-cli](http://gruntjs.com/getting-started) 
-
-Next, install all the dependency packages and start the app:
-```bash
-> npm install
-> grunt
-```
-
-You can now view the example project running at [http://localhost:9000/]
-
-## Project structure
-The interactive template comes with a sample project that loads a template HTML
-file, local JSON and remote JSON. Modify, replace or delete whatever you need
-for your project.
-
-The template uses requireJS to namespace, concatenate and minify the final output
-code, it also allows the simplified inclusion of third-party libraries via
-bower. Therefore, it would be preferable if you write your code as AMD modules.
-
-```
-/build (grunt build output folder)
-/cfg
-    - s3.json (remote deploy path and domain)
-    - aws.json  (AWS access credentials)
-/src
-    - boot.js (the main boot.js for inline loading, see Loading interactives)
-    - index.html (used for local testing of boot.js)
-    /app/js
-            - main.js (the starting point for the whole interactive)
-            - sampleView.js (example of a sub-view)
-            /data (sample local data)
-            /libs (useful libraries)
-            /templates (sample template HTML)
-        /imgs
-        /css
-            - main.scss (the main interactive's SASS CSS styles)
-            /modules (additional SASS CSS modules)
-```
+###Setup a new spreadsheet
+1. Copy the template spreadsheet <a href="https://docs.google.com/spreadsheets/d/1c41KsYQhUXnWUenzZqqDVPCx71PZsUsDN0BTqpEevug">here</a>
+2. Click "share" in the top right corner and <b>allow anyone on guardian.co.uk to edit</b> the spreadsheet
+3. Publish the spreadsheet to the web. Click File > Publish to the web > Publish
+4. Email the interactive team with the link to your spreadsheet and ask that it be added to the s3 spreadsheet tool ( <a href='mailto:interactive.team@guardian.co.uk'>interactive.team@guardian.co.uk</a> )
 
 
-## Loading interactives
-There are two methods of running an interactive on a Guardian page, first is the
-`boot.js` which allows for JavaScript injection of assets directly into the page.
-The other method is via an `iframe`.
 
-By default the interactive template supports both of these methods, it's up to 
-you to decide which is most appropriate for the type of interactive being built.
+###Create your visual story
+This layout tool generates a series of rows with blocks nested within each row
 
-### 1. In-line loading via `boot.js` 
-If you want to run inside scope of Guardian page and not within an iframe you'll
-need to choose the `boot.js` method. All assets including HTML will need to be
-dynamically loaded. The example project included in this template compiles
-HTML files into a single JavaScript file. However, you are free to load assets
-in anyway you see fit.
-
-Notes on `boot.js`:
-
-* Full access to page DOM
-* Running in Guardian page's scope
-* Access to user's details via Identity
-* Reduced performance overhead
-* No need for iframe-messenger
-* Requires an AMD `boot.js` boot loader file
-
-### 2. Embed loading via `<iframe>`
-A simpler option is to load the interactive via an `<iframe>`, this allows you to 
-use standard HTML pages and `<script> <link>` tags to load resources. It can be
-useful when working with third-party code. However, the interactive will be
-running from the `interactive.guim.co.uk` domain and therefore will not have
-access to the Guardian page or user details via identity.
-
-**NOTE**  You must use a URL with the `/embed/` path for it to be iframed.
-
-Iframes are useful when the interactive is intended to be embedded in multiple 
-articles, such as story package navigation or widget.
-
-Notes on `<iframe>`:
-
-* Self-contained scope
-* Simpler development
-* No need to write AMD modules
-* Requires iframe-messenger for resizing
-* Embeddable in multiple pages (and external sites)
-* No access to Guardian DOM or scope
-* No access to user's details or Identity
+- To <b>create a new row of blocks</b>, select the 'row' in the block_type column. Then create blocks in the rows that follow
+- To <b>create a new block within a row</b>, select the block type you wish to create from the block_type dropdown. Populate the related fields
+    - <b>Layout</b>: select the width of the block you wish to create. Note that full/half blocks cannot be combined with flex blocks
+    - <b>Primary text</b>: Typically header or large quote text
+    - <b>Secondary text</b>: Typically paragraph or credit text depending on the block type
+    - <b>URL</b>: 
+        - For photo, use the bookmarklet here to grab the photo data from the media grid 
+        - For video, include the url from Octopus multimedia
+        - For audio, include the url for the mp3 file
+    - <b>Custom styles</b>: Use this sparingly. Add class names separated by a space from the list below to change the lead photo text colour, position, shadow, and background colour for mobile
 
 
-## Pathing to assets
-:TODO
+###Preview the visual story
+Copy the url below and replace the [SPREADSHEET] with the spreadsheet key for your project
+<pre><code>http://interactive.guim.co.uk/templates/visual-story/1.0/index.html?key=[SPREADSHEET]</code></pre>
 
-## Installing additional libraries
-If you need to use any additional libraries such as D3 or jquery then use:
+###Create a composer asset for publication
+<b>Note that this is not intended to be used with the Composer immersive setting switched on.</b><br>
+Paste the url below into an interactive asset in composer to create the embed.
+<pre><code>http://interactive.guim.co.uk/templates/visual-story/1.0/boot.js</code></pre>
+In the alt field, add the following line replacing [SPREADSHEET] with the key you used above to create the preview link.
+<pre><code>key=[SPREADSHEET]</code></pre>
 
-`npm install d3 --save-dev`
+###Custom styles
+Replace the [colour name] with any of the colour names listed in <a href='http://guardian.github.io/pasteup-palette/demo/'>this palette</a>
+<pre><code>text-[colour name]
+bg-[colour name]
+text-shadow
+lead-top-left
+lead-bottom-left 
+lead-top-right 
+lead-bottom-right </code></pre>
 
-That will update the `package.json` dependency file and bundle the library
-into the main js.
+###Media grid bookmarklet
+Create a new bookmark in your browser (Chrome!) and then save the following code in the url field. To grab the photo info from the grid, crop a photo and then select the bookmark. Select the contents of the text box created on the screen and then pasted into the URL field of a photo block above.
 
-You can then require the library directly into your code via the define function:
+<pre><code>javascript: (function() {function loadData() {if (window.location.search.indexOf('?crop=') > -1) {var xmlhttp = new XMLHttpRequest();var url = "https://api." + window.location.host + window.location.pathname;xmlhttp.onreadystatechange = function() {if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {var data = JSON.parse(xmlhttp.responseText);logData(data);}};xmlhttp.withCredentials = true;xmlhttp.open("GET", url, true);xmlhttp.send();} else {alert('Please select a crop on the right');}}function logData(imgData) {var cropId = window.location.search.replace('?crop=', '');var cropData;var masterData;if (cropId === '') {alert('select a crop on the right');}for (var i = 0; i < imgData.data.exports.length; i++) {if (imgData.data.exports[i].id == cropId) {cropData = imgData.data.exports[i];masterData = imgData.data.exports[i].master.dimensions;break;}}var crops = cropData.assets.sort(function(a, b) {return a.dimensions.width - b.dimensions.width;});var widths = crops.map(function(crop) {return crop.dimensions.width;});var path = window.location.href.replace('https://media.gutools.co.uk/images/', 'http://media.guim.co.uk/').replace('?crop=', '/');var dimensions = 'cropRatio=' + masterData.width + ',' + masterData.height;var sizes = 'size=';widths.forEach(function(w, i) {sizes+= (i > 0) ? ',' : '';sizes += w;});sizes += '\t';var newInput = document.createElement("textarea");newInput.setAttribute('style', 'position: absolute; top: 50px; left: 0;');newInput.id = "gu-text";newInput.value = path + '\t' + dimensions + '&' + sizes ;newInput.cols = '175';newInput.rows = "1";document.getElementsByClassName('easel__canvas')[0].appendChild(newInput);}loadData();})();
+</code></pre>
 
-```javascript
-var d3 = require('d3');
-```
-
-## Deploying to S3
-Once you ready to deploy to S3 you can use grunt to upload your files.
-
-First you'll need to specify where the files are to be uploaded, this
-is done in the `cfg/s3.json` file. This path should have been specified
-during the project setup but it can be changed at any time.
-
-In the `cfg/s3.json` change the path where the interactive should be
-deployed too.
-
-
-You will also need AWS credentials either in `cfg/aws.json` or your ENV variables.
-Add the following to your `~/.bashrc` or `~/.bash_profile`:
-
-```bash
-export AWS_ACCESS_KEY_ID=xxxxxxxx
-export AWS_SECRET_ACCESS_KEY=xxxxxx
-```
-
-Next you'll want to simulate the upload to ensure it's going to do what
-you think it will.
-```bash
-> grunt deploy
-```
-
-Once you're happy everything looks good, deploy for real.
-```bash
-> grunt deploy
-```
-
-## Embedded iframe link target
-The embed `index.html` includes a [`<base>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag in the `<head>` with a `target` attribute of `_top`. This will force links
-to load in the parent page.
-
-```html
-<!-- HTML page that is being embedded in the iframe -->
-<head>
-    ...
-    <base target="_top" />
-    ...
-</head>
-```
+###The git repo for this project is here:
+<pre><code></code></pre>
