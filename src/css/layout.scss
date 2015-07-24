@@ -26,6 +26,7 @@ div[class^="gv-flex-"] {
 
 .gv-half, .gv-full {
 	margin: 0 0 20px 0;
+	float: left;
 }
 
 .gv-lead-photo {
@@ -156,7 +157,7 @@ div[class^="gv-flex-"] {
 	}
 
 	.gv-flex-4 {
-		width: 960px
+		width: 940px
 	}
 
 	.gv-full, .gv-half {
