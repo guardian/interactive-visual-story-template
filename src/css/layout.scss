@@ -24,9 +24,23 @@ div[class^="gv-flex-"] {
 	margin: 0 0 10px 0;
 }
 
-.gv-half, .gv-full {
-	margin: 0 0 20px 0;
+.gv-full, .gv-half  {
+	margin: 0 0 10px 0;
 	float: left;
+	width: 100%;
+}
+
+.gv-half  {
+	width: 50%;
+	
+}
+
+.gv-half:nth-child(odd) {
+	padding-right: 5px;
+}
+
+.gv-half:nth-child(even) {
+	padding-left: 5px;
 }
 
 .gv-lead-photo {
@@ -52,13 +66,10 @@ div[class^="gv-flex-"] {
 @media(min-width:660px){
 
 
-	.gv-full {
-		width: 100%;
-	}
 
-	.gv-half {
-		width: 50%;
-		float: left;
+	
+	.gv-full, .gv-half  {
+		margin: 0 0 20px 0;
 	}
 
 	.gv-half:nth-child(odd){
@@ -123,12 +134,24 @@ div[class^="gv-flex-"] {
 
 @media(min-width:980px){
 
+	.gv-half, .gv-full {
+
+	}
+
 	.gv-layout-flex {
 		margin: 0 -10px;
 	}
 
+	.gv-row .gv-lead {
+		margin-top: 120px;
+	}
+
+	.gv-row:first-of-type .gv-lead {
+		margin-top: 0px;
+	}
+
 	.gv-lead-photo {
-		margin: 0 -20px 20px -20px;
+		margin: 0px -20px 20px -20px;
 	}
 
 	.gv-flex {
@@ -137,8 +160,8 @@ div[class^="gv-flex-"] {
 
 
 	div[class^="gv-flex-"] {
-		margin: 0 10px 40px 10px;
-		min-height: 100px;
+		margin: 0 10px 20px 10px;
+		min-height: 60px;
 		float: left;
 		vertical-align: top;
 
