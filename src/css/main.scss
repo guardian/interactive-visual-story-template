@@ -30,8 +30,6 @@ figure.interactive {
 
     line-height: 1;
 
-
-
     font-family:'Guardian Egyptian Web','Egyptian Display', Georgia;
     -webkit-font-smoothing: antialiased;
     border-bottom: 1px solid rgba(0,0,0,.1);
@@ -104,3 +102,18 @@ figure.interactive {
     color: inherit;
 }
 
+
+.article--standard .article__body, .article--comment .article__body, .article--feature .article__body, .article--audio .article__body {
+    padding: 0px 12px 0px 12px;
+
+    .prose h2 + p {
+        margin-top: 0;
+    }
+
+    .gv-lead-photo .lead-text {
+        margin: 0 8px;
+    }
+    .guInteractive { 
+        border-bottom: none;
+    }
+}
