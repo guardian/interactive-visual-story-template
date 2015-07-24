@@ -55,6 +55,14 @@ div[class^="gv-flex-"] {
 	}
 }
 
+.gv-row .gv-lead {
+	margin-top: 40px;
+}
+
+.gv-row:first-of-type .gv-lead {
+	margin-top: 0px;
+}
+
 
 
 @media(min-width:480px){
