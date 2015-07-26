@@ -25,7 +25,7 @@
     "jit-grunt": "^0.9.1",
     "json-loader": "^0.5.2",
     "photoswipe": "^4.1.0",
-    "ractive": "^0.7.3",
-    "raw-loader": "^0.5.1"
+    "raw-loader": "^0.5.1",
+    "handlebars": "~3.0.3"
   }
 }
