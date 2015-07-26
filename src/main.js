@@ -1,6 +1,6 @@
 var Handlebars = require('handlebars/dist/cjs/handlebars');
 var Tabletop = require('./js/utils/tabletop');
-var reqwest = require('reqwest');
+var getJSON = require('./js/utils/getjson');
 var polyfills = require ('./js/utils/polyfills');
 var assetManager = require('./js/components/assetManager');
 
@@ -69,14 +69,12 @@ function loadData(params){
 
     if(!params.liveLoad){
     	//load the data via cached files
-    	reqwest({
-            url: 'https://interactive.guim.co.uk/spreadsheetdata/'+params.key+'.json',
-            type: 'json',
-            crossOrigin: true
-        })
-		.then(function(json){
-		    render(json.sheets.blocks, json.sheets.config);
-		});
+
+        getJSON('https://interactive.guim.co.uk/spreadsheetdata/'+params.key+'.json', 
+            function(json){
+                render(json.sheets.blocks, json.sheets.config);
+            }
+        );
 
     } else {
     	//load the data via tabletop for speedy editing (ie no caching layer)
