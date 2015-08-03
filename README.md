@@ -1,11 +1,12 @@
 #Visual story template
+version 1.1 
 
 ###Setup a new spreadsheet
 1. Copy the template spreadsheet <a href="https://docs.google.com/spreadsheets/d/1c41KsYQhUXnWUenzZqqDVPCx71PZsUsDN0BTqpEevug">here</a>
-2. Click "share" in the top right corner and <b>allow anyone on guardian.co.uk to edit</b> the spreadsheet
+2. Click "share" in the top right corner and <b>allow anyone on guardian.co.uk to edit</b> the spreadsheet. Also share with this email address.
+<pre><code>1003398697195-cqgtcslthr0dkbfrosueatrs5aqjev5i@developer.gserviceaccount.com
+</code></pre>
 3. Publish the spreadsheet to the web. Click File > Publish to the web > Publish
-4. Email the interactive team with the link to your spreadsheet and ask that it be added to the s3 spreadsheet tool ( <a href='mailto:interactive.team@guardian.co.uk'>interactive.team@guardian.co.uk</a> )
-
 
 
 ###Create your visual story
