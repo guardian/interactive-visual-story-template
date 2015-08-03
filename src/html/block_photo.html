@@ -6,15 +6,15 @@
 
 			<div class='gv-expand'></div>
 		</div>
-		{{#if primarytext}}
-		<div class='lead-text {{customclass}}'>
+		{{#if primary_text}}
+		<div class='lead-text {{custom_class}}'>
 				
-			{{#if primarytext}}
-				<h2>{{{primarytext}}}</h2>
+			{{#if primary_text}}
+				<h2>{{{primary_text}}}</h2>
 			{{/if}}
 
-			{{#if secondarytext}}
-				<p>{{{secondarytext}}}</p>
+			{{#if secondary_text}}
+				<p>{{{secondary_text}}}</p>
 			{{/if}}
 
 		</div>
@@ -31,8 +31,8 @@
 		</div>
 	</div>
 
-	{{#if primarytext}}
-		<p>{{{primarytext}}} {{#if secondarytext}}<span class="gv-quote-credit">{{{secondarytext}}}</span>{{/if}}</p>
+	{{#if primary_text}}
+		<p>{{{primary_text}}} {{#if secondary_text}}<span class="gv-quote-credit">{{{secondary_text}}}</span>{{/if}}</p>
 	{{/if}}
 
 {{/if_eq}}

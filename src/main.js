@@ -39,7 +39,6 @@ function parseUrl(el){
 
     if(el.getAttribute('data-alt')){
         //pull params from alt tag of bootjs
-
         urlParams = el.getAttribute('data-alt').split('&');
         params.liveLoad = false;
     } else if(urlParams === undefined){
@@ -52,38 +51,40 @@ function parseUrl(el){
     urlParams.forEach(function(param){
      
         if (param.indexOf('=') === -1) {
-	        params[param.trim()] = true;
-	    } else {
-	    	var pair = param.split('=');
-	    	params[ pair[0] ] = pair[1];
-	    }
+            params[param.trim()] = true;
+        } else {
+            var pair = param.split('=');
+            params[ pair[0] ] = pair[1];
+        }
         
     });
-
-    console.log(el, params)
     
     return params;
 }
 
 function loadData(params){
+    
 
     if(!params.liveLoad){
-    	//load the data via cached files
 
-        getJSON('https://interactive.guim.co.uk/spreadsheetdata/'+params.key+'.json', 
+        var isLive = ( window.location.origin.search('interactive.guim.co.uk') || window.location.origin.search('preview.gutools.co.uk') > -1) ? false : true;
+        var folder = (!isLive)? 'docsdata-test' : 'docsdata';
+
+        getJSON('https://interactive.guim.co.uk/' + folder + '/' + params.key + '.json', 
             function(json){
+                console.log(json)
                 render(json.sheets.blocks, json.sheets.config);
             }
         );
-
     } else {
-    	//load the data via tabletop for speedy editing (ie no caching layer)
+        //load the data via tabletop for speedy editing (ie no caching layer)
         loadDataViaTabletop(params);
         //setInterval(function(){ loadDataViaTabletop(params); }, 30000);
 
     }
-    
+
 }
+
 
 function loadDataViaTabletop(params){
     Tabletop.init({ 
@@ -105,7 +106,8 @@ function render(blocks, config){
     })
 
     blocks.forEach(function(b,i){
-        if(b.blocktype === 'row'){
+
+        if(b.block_type === 'row'){
 
             if(i > 0){
                 rowData.push(row);
@@ -171,7 +173,7 @@ function render(blocks, config){
                 
         },
         getImageData: function(){
-            var query = this.assetdata;
+            var query = this.asset_data;
             query = query.split('&');
             var imgData = {
                 cropRatio: 1,
@@ -197,7 +199,6 @@ function render(blocks, config){
     Handlebars.registerPartial({
         'row': require('./html/row.html'),
         'block': require('./html/block.html'),
-        'titleBlock': require('./html/block_title.html'),
         'audioBlock': require('./html/block_audio.html'),
         'iframeBlock': require('./html/block_iframe.html'),
         'photoBlock': require('./html/block_photo.html'),
