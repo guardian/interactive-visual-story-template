@@ -150,7 +150,6 @@ function render(blocks, config){
         }              
 
     }
-console.log(rowData)
 
     //update display
     var data = {
