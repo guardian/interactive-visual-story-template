@@ -24,15 +24,15 @@
 
 
 {{else}}
-	
+
 	<div class="gv-photo">
 		<div class='gv-image-container gv-asset' data-asset-type='image' data-url='{{url}}' {{getImageData}}>
 			<div class='gv-expand'></div>
 		</div>
 	</div>
 
-	{{#if primary_text}}
-		<p>{{{primary_text}}} {{#if secondary_text}}<span class="gv-quote-credit">{{{secondary_text}}}</span>{{/if}}</p>
+	{{#if this.primary_text}}
+		<p>{{{this.primary_text}}} {{#if this.secondary_text}}<span class="gv-quote-credit">{{{this.secondary_text}}}</span>{{/if}}</p>
 	{{/if}}
 
 {{/if_eq}}
