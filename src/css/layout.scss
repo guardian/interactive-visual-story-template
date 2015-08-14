@@ -172,13 +172,49 @@ div[class^="gv-flex-"] {
 
 
 	div[class^="gv-flex-"] {
-		margin: 0 10px 20px 10px;
+		padding: 0 10px 0px 10px;
 		min-height: 60px;
 		float: left;
 		vertical-align: top;
 
 	}
 
+	.gv-flex-1{
+		width: 25%;
+	}
+
+	.gv-flex-2 {
+		width: 50%;
+	}
+
+	.gv-flex-3 {
+		width: 75%;
+	}
+
+	.gv-flex-4 {
+		width: 100%;
+	}
+
+
+
+	.gv-full, .gv-half {
+	
+	}
+
+	
+}
+
+
+@media(min-width:1140px){
+
+	div[class^="gv-flex-"] {
+		margin: 0 10px 20px 10px;
+		min-height: 60px;
+		float: left;
+		vertical-align: top;
+		padding: 0;
+	}
+	
 	.gv-flex-1{
 		width: 220px;
 	}
@@ -192,18 +228,9 @@ div[class^="gv-flex-"] {
 	}
 
 	.gv-flex-4 {
-		width: 940px
+		width: 940px;
 	}
 
-	.gv-full, .gv-half {
-	
-	}
-
-	
-}
-
-
-@media(min-width:1140px){
 	.gv-layout-flex {
 		margin: 0 0 0 150px;
 	}
