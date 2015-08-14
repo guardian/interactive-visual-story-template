@@ -46,6 +46,9 @@ Create a new bookmark in your browser (Chrome!) and then save the following code
 ###Custom styles
 Replace the [colour name] with any of the colour names listed in <a href='http://guardian.github.io/pasteup-palette/demo/'>this palette</a>
 <pre><code>text-[colour name]
+text-18
+text-20
+text-24
 bg-[colour name]
 text-shadow
 lead-top-left
