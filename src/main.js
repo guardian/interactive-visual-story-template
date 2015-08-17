@@ -150,6 +150,19 @@ function render(blocks, config){
         }              
 
     }
+    //set wrapper band colour on guardian page
+    console.log(params)
+
+    if(params.global_styles){
+        if(params.global_styles.search('bg-neutral-1') >-1){
+            var bands = document.querySelectorAll('.l-side-margins');
+            for(var b = 0; b < bands.length; b ++){
+                bands[b].className += ' gv-bg-black';
+            }
+        }
+    }
+
+
 
     //update display
     var data = {

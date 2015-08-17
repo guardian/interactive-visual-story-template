@@ -92,6 +92,11 @@ figure.interactive {
   
 }
 
+.l-side-margins.gv-bg-black:before, .l-side-margins.gv-bg-black:after {
+        background: rgba(0,0,0,0.08);
+}
+
+
 //guardian app style crunching
 
 .tone--news .article__header {
