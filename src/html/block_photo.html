@@ -31,9 +31,15 @@
 		</div>
 	</div>
 
-	{{#if this.primary_text}}
-		<p>{{{this.primary_text}}} {{#if this.secondary_text}}<span class="gv-quote-credit">{{{this.secondary_text}}}</span>{{/if}}</p>
-	{{/if}}
+	{{#if_contains custom_class "text-quote"}}
+		{{>quoteBlock}}
+	{{else}}
+
+		{{#if this.primary_text}}
+			<p>{{{this.primary_text}}} {{#if this.secondary_text}}<span class="gv-quote-credit">{{{this.secondary_text}}}</span>{{/if}}</p>
+		{{/if}}
+
+	{{/if_contains}}
 
 {{/if_eq}}
 

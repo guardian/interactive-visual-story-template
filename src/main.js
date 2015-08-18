@@ -184,6 +184,12 @@ function render(blocks, config){
             return opts.fn(this);
                 
         },
+        'if_contains': function(a, b, opts){
+            if(a.search(b) == -1 ){
+                return opts.inverse(this);
+            }
+            return opts.fn(this);
+        },
         getImageData: function(){
             var query = this.asset_data;
             query = query.split('&');
