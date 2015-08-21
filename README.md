@@ -6,7 +6,7 @@ version 1.1
 2. Click "share" in the top right corner and <b>allow anyone on guardian.co.uk to edit</b> the spreadsheet. Also share with this email address.
 <pre><code>1003398697195-cqgtcslthr0dkbfrosueatrs5aqjev5i@developer.gserviceaccount.com
 </code></pre>
-3. Publish the spreadsheet: Click File > Publish to the web > Publish
+3. Publish the spreadsheet: Click File > Publish to the web > Publish. Note: this is for being able to preview. There's an additional step to publish the spreadsheet onto the site, which is listed below.
 
 
 ###Create your visual story
@@ -35,6 +35,8 @@ Paste the url below into an interactive asset in composer to create the embed.
 <pre><code>http://interactive.guim.co.uk/templates/visual-story/1.1/boot.js</code></pre>
 In the alt field, add the following line replacing [SPREADSHEET] with the key you used above to create the preview link.
 <pre><code>key=[SPREADSHEET]</code></pre>
+
+Note: You have to publish the spreadsheet via the <a href='https://visuals.gutools.co.uk/docs/'>Visuals docs tool</a> for the project to show up on the site - or for edits to be reflected on the site. Go to the page, click publish next to the spreadsheet you created.
 
 
 ###Media grid bookmarklet
