@@ -23,7 +23,7 @@ This layout tool generates a series of rows with blocks nested within each row
         	- if this video is published on a video page on theguardian.com
         		View source on the video page, include the .mp4 path of the video in the url field and the poster image url in the asset_data field of the spreadsheet
         	- if the video is published through the interactive video output process
-        		Include the video key / identifier used to acces the video via the multimedia api
+        		Include the video key / identifier used to acces the video via the multimedia api in the url field
         - For audio, include the url for the mp3 file
     - <b>Custom styles</b>: Use this sparingly. Add class names separated by a space from the list below to change the lead photo text colour, position, shadow, and background colour for mobile
 
