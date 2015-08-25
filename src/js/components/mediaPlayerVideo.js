@@ -5,6 +5,8 @@ function mediaDisplay(el,player){
 	var videoBitRate = assetManager.videoBitRate;
 
 	var src = el.getAttribute('data-url'),
+		isSingleSourceVideo = (src.search('.mp4') > -1) ? true : false,
+		posterSrc = (isSingleSourceVideo) ? el.getAttribute('data-asset-data') : getVideoPosterImage(src),
 		coverLoaded = false,
 		sourceLoaded = false;
 
@@ -42,9 +44,11 @@ function mediaDisplay(el,player){
 
 	function loadSource(){
 
+		
+
 		if(!coverLoaded){
 			coverLoaded = true;
-			player.setAttribute('poster', getVideoPosterImage(src));
+			player.setAttribute('poster', posterSrc);
 			player.setAttribute('height', 'auto');
 		}
 		if(!sourceLoaded){
@@ -140,8 +144,14 @@ function mediaDisplay(el,player){
 	 * @returns {object} URLs to video files.
 	 */
 	function getVideoURLS(filePath) {		
-	    var videoPaths = getVideoCDNBasePaths(filePath);
+		//search to see if the video is single source, meaning it's from a video published on a video page rather than through the interactive video workflow
+		if(isSingleSourceVideo ){
+			return {
+				'video/mp4': filePath
+			};
+		}
 
+		var videoPaths = getVideoCDNBasePaths(filePath);
 		return {
 			'video/mp4': getMP4URL(videoPaths.path),
 			'video/webm': getWebmURL(videoPaths.path),
@@ -149,6 +159,7 @@ function mediaDisplay(el,player){
 			'video/m3u8': 'http://multimedia.guardianapis.com/interactivevideos/video.php?file='+
 	            videoPaths.filename + '&format=application/x-mpegURL&maxbitrate=2000'	
 		};
+	    
 	}
 
 	/**
