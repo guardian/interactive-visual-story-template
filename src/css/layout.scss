@@ -24,7 +24,7 @@ div[class^="gv-flex-"] {
 	margin: 0 0 10px 0;
 }
 
-.gv-full, .gv-half  {
+.gv-full, .gv-half, .gv-third {
 	margin: 0 0 10px 0;
 	float: left;
 	width: 100%;
@@ -35,11 +35,16 @@ div[class^="gv-flex-"] {
 	
 }
 
-.gv-half:nth-child(odd) {
+.gv-third {
+	width: calc(100% /3);
+	padding: 0 2px;
+}
+
+.gv-half:nth-child(odd), .gv-quarter:nth-child(odd)  {
 	padding-right: 5px;
 }
 
-.gv-half:nth-child(even) {
+.gv-half:nth-child(even), .gv-quarter:nth-child(even) {
 	padding-left: 5px;
 }
 
@@ -72,21 +77,31 @@ div[class^="gv-flex-"] {
 }
 
 @media(min-width:660px){
-
+	
+	.gv-quarter:nth-child(even), .gv-quarter:nth-child(odd) {
+		padding-right: 0;
+		padding-left: 0;
+	}
 
 
 	
-	.gv-full, .gv-half  {
+	.gv-full, .gv-half, .gv-third  {
 		margin: 0 0 20px 0;
 	}
 
-	.gv-half:nth-child(odd){
+	.gv-half:nth-child(odd),{
 		padding-right: 10px;
 	}
 
 	.gv-half:nth-child(even){
 		padding-left: 10px;
 	}
+
+	.gv-third {
+		    padding: 0 10px;
+
+	}
+
 
 	.gv-lead-photo {
 		position: relative;
