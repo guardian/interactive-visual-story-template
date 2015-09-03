@@ -30,6 +30,10 @@ div[class^="gv-flex-"] {
 	width: 100%;
 }
 
+.gv-third {
+	
+}
+
 .gv-half  {
 	width: 50%;
 	
@@ -38,6 +42,7 @@ div[class^="gv-flex-"] {
 .gv-third {
 	width: calc(100% /3);
 	padding: 0 2px;
+	margin: 0 0 0 0;
 }
 
 .gv-half:nth-child(odd), .gv-quarter:nth-child(odd)  {
