@@ -50,22 +50,22 @@
 
  	.text-18 {
  		p,h3 {
- 			font-size: 18px;
- 			line-height: 28px;
+ 			font-size: 16px;
+ 			line-height: 24px;
  		}
  	}
 
  	.text-20 {
  		p,h3 {
- 			font-size: 20px;
+ 			font-size: 18px;
  			line-height: 28px;
  		}
  	}
 
  	.text-24 {
  		p,h3 {
- 			font-size: 24px;
- 			line-height: 32px;
+ 			font-size: 20px;
+ 			line-height: 28px;
  		}
 
  		
@@ -77,6 +77,29 @@
          .text-shadow {
 	    	text-shadow: 0 0 20px rgba(0,0,0,0.8);
 	    }
+
+	    .text-18 {
+	 		p,h3 {
+	 			font-size: 18px;
+	 			line-height: 28px;
+	 		}
+	 	}
+
+	 	.text-20 {
+	 		p,h3 {
+	 			font-size: 20px;
+	 			line-height: 28px;
+	 		}
+	 	}
+
+	 	.text-24 {
+	 		p,h3 {
+	 			font-size: 24px;
+	 			line-height: 32px;
+	 		}
+
+	 		
+	 	}
     }
 
 
