@@ -65,7 +65,7 @@
 }
 
 
- @media(min-width:660px){
+ @media(min-width:980px){
 
     @each $color, $hex in $pasteup-palette {
         .gv-lead-photo .bg-#{$color} {

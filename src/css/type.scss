@@ -140,10 +140,13 @@
 
 
 
+
 	}
 	
 	@media(min-width:1140px){
-		
+		.lead-text {
+	    	max-width: 320px;
+	    }
 	}
 	
 	@media(min-width:1300px){

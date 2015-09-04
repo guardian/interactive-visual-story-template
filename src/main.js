@@ -167,7 +167,8 @@ function render(blocks, config){
     //update display
     var data = {
         rows: rowData,
-        config: params
+        config: params,
+        media: ['facebook', 'twitter']
     };
 
     Handlebars.registerHelper({
@@ -239,6 +240,41 @@ function render(blocks, config){
   	dom.innerHTML = content(data);
 
     assetManager.init(dom);
+
+    var sharers = dom.querySelectorAll('.gv-share-facebook, .gv-share-twitter');
+
+    for(var s = 0; s < sharers.length; s ++){
+        sharers[s].addEventListener('click', function(){
+                var platform = this.getAttribute('class').replace('gv-share-', '');
+
+
+                var shareWindow;
+                var twitterBaseUrl = "http://twitter.com/share?text=";
+                var facebookBaseUrl = "https://www.facebook.com/dialog/feed?display=popup&app_id=741666719251986&link=";
+
+                var message = params.tweetText;
+                       
+                var shareImage = "http://media.guim.co.uk/4b053b05666b14e7ceb9e887456e1cbf2ffcbe3e/0_0_5472_3648/2000.jpg";
+
+                if(platform === "twitter"){
+                            shareWindow = 
+                                twitterBaseUrl + 
+                                encodeURIComponent(params.tweetText) + 
+                                "&url=" + 
+                                encodeURIComponent(params.shareURL)   
+                }else if(platform === "facebook"){
+                    shareWindow = 
+                        facebookBaseUrl + 
+                        encodeURIComponent(params.shareURL) + 
+                        "&picture=" + 
+                        encodeURIComponent(shareImage) + 
+                        "&redirect_uri=http://www.theguardian.com";
+                }
+
+                window.open(shareWindow, platform + "share", "width=640,height=320");
+        })
+    }
+
 
 }
 

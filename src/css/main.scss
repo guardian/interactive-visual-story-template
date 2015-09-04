@@ -8,6 +8,10 @@
 @import 'modules/_grid-system';
 @import 'modules/_breakpoints';
 
+// Optional side margins
+@import 'modules/_mq';
+@import 'modules/_side-margins';
+
 
 @import 'modules/_grid';
 @import 'layout';
@@ -18,6 +22,7 @@
 @import 'photo';
 @import 'photoswipe';
 @import 'photoswipe_guardian';
+@import 'modules/share';
 
 figure.interactive {
     margin-top: 0;
@@ -27,6 +32,33 @@ figure.interactive {
 
 // Setup page
 .guInteractive {
+    
+    padding: 0 10px;
+
+
+    @media(min-width:660px){
+        max-width: 620px;
+        margin: 0px auto;
+    }
+
+    @media(min-width:740px){
+        max-width: 700px;
+        margin: 0px auto;
+    }
+
+
+    
+    @media(min-width:980px){
+        max-width: 940px;
+    }
+
+    @media(min-width:1140px){
+        max-width: 1100px;
+    }
+
+    @media(min-width:1300px){
+        max-width: 1260px;
+    }
 
     line-height: 1;
 
@@ -126,4 +158,8 @@ figure.interactive {
 .article--standard .article__body .element-interactive {
     width: 100%;
 
+}
+
+.is-immersive .l-footer {
+    display: block;
 }
