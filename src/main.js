@@ -67,7 +67,7 @@ function loadData(params){
 
     if(!params.liveLoad){
 
-        var isLive = ( window.location.origin.search('interactive.guim.co.uk') > -1 || window.location.origin.search('preview.gutools.co.uk') > -1) ? false : true;
+        var isLive = ( window.location.origin.search('interactive.guim.co.uk') > -1 || window.location.origin.search('gutools.co.uk') > -1) ? false : true;
         var folder = (!isLive)? 'docsdata-test' : 'docsdata';
 
         getJSON('https://interactive.guim.co.uk/' + folder + '/' + params.key + '.json', 
