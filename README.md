@@ -27,7 +27,7 @@ This layout tool generates a series of rows with blocks nested within each row
         - For audio, include the url for the mp3 file
     - <b>Custom styles</b>: Use this sparingly. Add class names separated by a space from the list below to change the lead photo text colour, position, shadow, and background colour for mobile
 
-![Alt text](/offline/layout_guide.png?raw=true "Layout guide")
+![Alt text](https://raw.githubusercontent.com/guardian/interactive-visual-story-template/master/offline/layout_guide.png "Layout guide")
 
 ### Preview the visual story
 Copy the url below and replace the [SPREADSHEET] with the spreadsheet key for your project
