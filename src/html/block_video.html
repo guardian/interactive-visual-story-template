@@ -14,7 +14,7 @@
 
 
         </div>
-    </div>
+
 </div>
 
 {{#if_contains custom_class "text-quote"}}
@@ -22,7 +22,9 @@
 {{else}}
 
 	{{#if this.primary_text}}
-		<p>{{{this.primary_text}}} {{#if this.secondary_text}}<span class="gv-quote-credit">{{{this.secondary_text}}}</span>{{/if}}</p>
+		<p>{{{this.primary_text}}}</p>
+
+		{{#if this.secondary_text}}<p><span class="gv-quote-credit">{{{this.secondary_text}}}</span></p>{{/if}}
 	{{/if}}
 
 {{/if_contains}}
