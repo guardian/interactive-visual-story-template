@@ -6,7 +6,7 @@ function mediaDisplay(el,player){
 
 	var src = el.getAttribute('data-url'),
 		isSingleSourceVideo = (src.search('.mp4') > -1) ? true : false,
-		posterSrc = (isSingleSourceVideo) ? el.getAttribute('data-asset-data') : getVideoPosterImage(src),
+		posterSrc = (isSingleSourceVideo) ? src.replace('.mp4', '_poster.jpg') : getVideoPosterImage(src),
 		coverLoaded = false,
 		sourceLoaded = false;
 
