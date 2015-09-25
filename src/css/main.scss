@@ -29,6 +29,12 @@ figure.interactive {
     margin-bottom: 0;
 }
 
+figure {
+    .l-side-margins {
+        display: block !important;
+    }
+}
+
 
 // Setup page
 .guInteractive {
