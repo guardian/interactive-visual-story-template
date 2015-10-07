@@ -28,14 +28,26 @@
     p.gv-quote-credit {
     	@include fs-bodyCopy(2);
     	color: #767676;
-    	margin-top: 18px;
-    	margin-bottom: 40px;
+    	
+    	margin-bottom: 20px;
     	display: block;
     }
 
     p.gv-quote {
     	@include fs-headline(4);
-    	margin: 0 0 10px 0;
+    	margin: 20px 0 10px 0;
+    	position: relative;
+    	padding-top: 20px;
+    }
+
+    .gv-quote::before {
+    	width: 140px;
+    	height: 2px;
+    	background: #eee;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	content: ' ';
     }
 
     span.gv-photo-credit {
@@ -49,23 +61,38 @@
     }
 
  	.text-18 {
- 		p,h3 {
+ 		p,h3,p.gv-quote {
  			font-size: 16px;
  			line-height: 24px;
+ 		}
+
+ 		p.gv-quote-credit {
+ 			font-size: 12px;
+ 			line-height: 18px;
  		}
  	}
 
  	.text-20 {
- 		p,h3 {
+ 		p,h3,p.gv-quote {
  			font-size: 18px;
- 			line-height: 28px;
+ 			line-height: 24px;
+ 		}
+
+ 		p.gv-quote-credit {
+ 			font-size: 14px;
+ 			line-height: 20px;
  		}
  	}
 
  	.text-24 {
- 		p,h3 {
+ 		p,h3,p.gv-quote {
  			font-size: 20px;
  			line-height: 28px;
+ 		}
+
+ 		p.gv-quote-credit {
+ 			font-size: 16px;
+ 			line-height: 24px;
  		}
 
  		
@@ -79,26 +106,38 @@
 	    }
 
 	    .text-18 {
-	 		p,h3 {
+	 		p,h3,p.gv-quote,p.gv-quote-credit {
 	 			font-size: 18px;
 	 			line-height: 28px;
+	 		}
+
+	 		p.gv-quote-credit {
+	 			font-size: 14px;
+	 			line-height: 20px;
 	 		}
 	 	}
 
 	 	.text-20 {
-	 		p,h3 {
+	 		p,h3,p.gv-quote {
 	 			font-size: 20px;
+	 			line-height: 28px;
+	 		}
+	 		p.gv-quote-credit {
+	 			font-size: 16px;
 	 			line-height: 28px;
 	 		}
 	 	}
 
 	 	.text-24 {
-	 		p,h3 {
+	 		p,h3,p.gv-quote{
 	 			font-size: 24px;
 	 			line-height: 32px;
 	 		}
 
-	 		
+	 		p.gv-quote-credit {
+	 			font-size: 18px;
+	 			line-height: 28px;
+	 		}	 		
 	 	}
     }
 
@@ -131,7 +170,7 @@
 
 	    p.gv-quote {
 	    	@include fs-headline(6);
-	    	margin: 0 0 20px 0;
+	    	margin: 0 0 0px 0;
 	    }
 
 	    em {
