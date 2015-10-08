@@ -60,7 +60,8 @@ text-shadow
 lead-top-left
 lead-bottom-left 
 lead-top-right 
-lead-bottom-right </code></pre>
+lead-bottom-right
+row-divider </code></pre>
 
 ### The git repo for this project is here:
 <pre><code>https://github.com/guardian/interactive-visual-story-template</code></pre>
