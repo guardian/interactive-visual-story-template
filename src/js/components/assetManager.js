@@ -98,6 +98,8 @@ function scanAssets() {
 				queue.splice(a, 1);
 				a--;
 			}
+		} else if(queue[a].status === 'active'){
+			updateAsset(queue[a], queue[a].el, queue[a].el.getAttribute('data-asset-type'), resizeAsset);
 		}
 
 	}
@@ -139,13 +141,15 @@ function updateAsset(asset, el, type, resizeAsset){
 		return 'active';
 
 	} else if (type === 'video'){
+		
 
 		if(!asset.player){
 			asset.player = new MediaPlayer(el);
 			el.classList.remove('gv-asset'); 
 		}
 
-		if(position.nearViewport){
+		if(position.inViewport){
+			console.log(asset)
 			asset.player.isReady(true);
 			return 'active';
 		}

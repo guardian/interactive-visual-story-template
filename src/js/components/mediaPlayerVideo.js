@@ -5,8 +5,8 @@ function mediaDisplay(el,player){
 	var videoBitRate = assetManager.videoBitRate;
 
 	var src = el.getAttribute('data-url'),
-		isSingleSourceVideo = (src.search('.mp4') > -1) ? true : false,
-		posterSrc = (isSingleSourceVideo) ? src.replace('.mp4', '_poster.jpg') : getVideoPosterImage(src),
+		isSingleSourceVideo = (src.search('cdn.theguardian.tv/interactive') > -1) ? false : true,
+		posterSrc = getPoster(),
 		coverLoaded = false,
 		sourceLoaded = false;
 
@@ -170,6 +170,14 @@ function mediaDisplay(el,player){
 	function getVideoPosterImage(filePath) {
 	    var videoPaths = getVideoCDNBasePaths(filePath);
 		return videoPaths.poster; 
+	}
+
+	function getPoster(){
+		if( el.getAttribute('data-asset-data') != ''){
+			return el.getAttribute('data-asset-data');
+		}
+
+		return getVideoPosterImage(src);
 	}
 
 	init();
