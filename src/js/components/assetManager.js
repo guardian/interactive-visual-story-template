@@ -149,7 +149,6 @@ function updateAsset(asset, el, type, resizeAsset){
 		}
 
 		if(position.inViewport){
-			console.log(asset)
 			asset.player.isReady(true);
 			return 'active';
 		}
@@ -213,9 +212,14 @@ function loadImage(el, bBox){
 			el.setAttribute('style', 'height: auto;');
        		el.classList.remove('gv-asset'); 
        		el.classList.add('gv-loaded');
-       		el.onclick = function(){
-       			loadPhotoSwipe(photoSwipeList);
+       		if(ratio){
+       			el.onclick = function(){
+       				loadPhotoSwipe(photoSwipeList);
+       			}
+       		} else {
+       			el.classList.add('gv-image-inactive-expand'); 
        		}
+       		
 	};  
 
 	image.src = path;
@@ -244,7 +248,7 @@ function getZoomPhoto(photoSwipeList){
 
 	realViewportWidth = windowPixelRatio * windowWidth;
 	realViewportHeight = windowPixelRatio * windowHeight;
-console.log(realViewportWidth)
+
 
 	for(var p = 0; p < photoSwipeList.length; p ++){
 		var photo = photoSwipeList[p];

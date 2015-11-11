@@ -16,3 +16,9 @@
 		display: block;
 	}
 }
+
+.gv-image-inactive-expand:hover {
+	.gv-expand {
+		display: none;
+	}
+}
