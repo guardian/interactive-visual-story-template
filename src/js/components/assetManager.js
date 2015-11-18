@@ -8,10 +8,12 @@ var PhotoSwipeUI_Default = require('photoswipe/src/js/ui/photoswipe-ui-default')
 var pswpElement;
 
 
-var MediaPlayer = require ('../components/mediaPlayer');
+var MediaPlayer = require('../components/mediaPlayer');
+var LoopPlayer = require('./loopPlayer');
+
 
 //array populated during init, scrapes all classes for 'gv-asset'
-var queue = [];		
+var queue = [];
 var isThereVideo = false;
 var currentlyPlaying;
 
@@ -34,7 +36,7 @@ function init(dom){
 
 	//init photoswiper
 	initPhotoSwipe(dom);
-	
+
 	//determine assets to lazy load or monitor viewport position
 	var list = dom.querySelectorAll('.gv-asset');
 	for(var l = 0; l < list.length; l ++){
@@ -48,20 +50,20 @@ function init(dom){
 		}
 	}
 
-	
+
 
 	//scan the list of managed assets
 	scanAssets();
 
 	window.addEventListener(
-		'scroll', 
+		'scroll',
 		utils.debounce(function(){
 			scanAssets();
 		}, 250)
 	);
 
 	window.addEventListener(
-		'resize', 
+		'resize',
 		utils.debounce(function(){
 			scanAssets();
 		}, 250)
@@ -106,9 +108,9 @@ function scanAssets() {
 
 function updateAsset(asset, el, type, resizeAsset){
 	var position = measureElement(el);
-   
+
 	if(type === 'image' || type === 'image-lead'){
-		
+
 		if(resizeAsset){
 			el.setAttribute('style', 'height: ' + (position.rect.width * el.getAttribute('data-image-ratio')) + 'px');
 		}
@@ -123,7 +125,7 @@ function updateAsset(asset, el, type, resizeAsset){
 		if(position.nearViewport){
 			loadIframe(el);
 			return 'loaded';
-		}			
+		}
 
 	} else if (type === 'audio'){
 
@@ -142,7 +144,7 @@ function updateAsset(asset, el, type, resizeAsset){
 
 		if(!asset.player){
 			asset.player = new MediaPlayer(el);
-			el.classList.remove('gv-asset'); 
+			el.classList.remove('gv-asset');
 		}
 
 		if(position.nearViewport){
@@ -151,7 +153,10 @@ function updateAsset(asset, el, type, resizeAsset){
 		}
 
 		asset.player.isReady(false);
-		return 'active';		
+		return 'active';
+	} else if (type === 'loop') {
+		new LoopPlayer(el);
+		return 'loaded';
 	}
 
 	return 'notloaded';
@@ -198,21 +203,21 @@ function loadImage(el, bBox){
 	//loading image
 	var image = new Image();
 	var path = basePath + '/' + sizeToLoad + '.jpg';
-	
+
 	image.onload = function() {
-			
+
 			var img = document.createElement('img');
 			img.setAttribute('src', path);
 			el.appendChild(img);
-			
+
 
 			el.setAttribute('style', 'height: auto;');
-       		el.classList.remove('gv-asset'); 
+       		el.classList.remove('gv-asset');
        		el.classList.add('gv-loaded');
        		el.onclick = function(){
        			loadPhotoSwipe(photoSwipeList);
        		}
-	};  
+	};
 
 	image.src = path;
 
@@ -220,13 +225,13 @@ function loadImage(el, bBox){
 }
 
 function loadPhotoSwipe(photoSwipeList){
-	
+
 	var zoomPhoto = getZoomPhoto(photoSwipeList);
 
 	var options = {
-             // history & focus options are disabled on CodePen        
+             // history & focus options are disabled on CodePen
         history: false
-        
+
     };
 
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, zoomPhoto , options);
@@ -265,15 +270,15 @@ console.log(realViewportWidth)
 				break;
 			}
 
-		}		
+		}
 	}
 
 	return zoomedPhoto;
 }
 
 function loadIframe(el){
-	el.classList.remove('gv-asset'); 
-	iframeLoader.boot(el, el.getAttribute('data-url'));	
+	el.classList.remove('gv-asset');
+	iframeLoader.boot(el, el.getAttribute('data-url'));
 }
 
 
@@ -282,10 +287,10 @@ function registerPlaying(player){
 		if(currentlyPlaying){
 			currentlyPlaying.pause();
 		}
-		
+
 		currentlyPlaying = player;
-	} 
-	
+	}
+
 }
 
 function setVideoBitrate(bitrate) {

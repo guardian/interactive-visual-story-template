@@ -1,5 +1,5 @@
 /**
- * Project: Project name 
+ * Project: Project name
  * File:    Main SCSS
  */
 @import 'modules/_fonts';
@@ -15,6 +15,7 @@
 @import 'color';
 @import 'audio';
 @import 'video';
+@import 'loop';
 @import 'photo';
 @import 'photoswipe';
 @import 'photoswipe_guardian';
@@ -89,7 +90,7 @@ figure.interactive {
         margin: 0px auto;
     }
 
-  
+
 }
 
 .l-side-margins.gv-bg-black:before, .l-side-margins.gv-bg-black:after {
@@ -118,7 +119,7 @@ figure.interactive {
     .gv-lead-photo .lead-text {
         margin: 0 8px;
     }
-    .guInteractive { 
+    .guInteractive {
         border-bottom: none;
     }
 }

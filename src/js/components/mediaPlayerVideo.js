@@ -16,9 +16,9 @@ function mediaDisplay(el,player){
 		var width = player.getBoundingClientRect().width;
         var height = (width * 0.5625) + 'px';
         player.setAttribute('height', height);
-		
 
-	
+
+
 		player.addEventListener("play", function () {
 			el.classList.add("gv-state-playing");
 			el.classList.remove("gv-state-paused");
@@ -44,7 +44,7 @@ function mediaDisplay(el,player){
 
 	function loadSource(){
 
-		
+
 
 		if(!coverLoaded){
 			coverLoaded = true;
@@ -61,7 +61,7 @@ function mediaDisplay(el,player){
 				player.appendChild(sourceEl);
 			});
 		}
-		
+
 	}
 
 	function unloadSource(){
@@ -80,7 +80,7 @@ function mediaDisplay(el,player){
 	function getVideoCDNBasePaths(videoURL) {
 	    var regex = /(?:interactive\/mp4\/1080|interactive)\/(.+)\/(.+)_.+_.+\..+$/g;
 	    var matches = regex.exec(videoURL);
-	    
+
 	    if (!matches) {
 	        console.warn('Failed to find video path and filename', videoURL);
 	        return;
@@ -98,7 +98,7 @@ function mediaDisplay(el,player){
 	        oggPath: oggPath,
 	        folder: matches[1],
 	        filename: matches[2],
-	        poster: poster 
+	        poster: poster
 	    };
 	}
 
@@ -130,7 +130,7 @@ function mediaDisplay(el,player){
 		if (videoBitRate === '768k') { fileSuffix = '_mid.ogv'; }
 		if (videoBitRate === '488k') { fileSuffix = '_tiny.ogv'; }
 		if (videoBitRate === '220k') { fileSuffix = '_lo.ogv'; }
-		
+
 		// Only _mid.ogv is working  so force that :(
 		fileSuffix = '_mid.ogv';
 		return path + fileSuffix;
@@ -140,10 +140,10 @@ function mediaDisplay(el,player){
 	/**
 	 * Get different video encoded paths.
 	 * @param {string} baseURL - Path to the video on the GU CDN.
-	 * @param {number} [bitrate=1024] - Video bitrate to use.  
+	 * @param {number} [bitrate=1024] - Video bitrate to use.
 	 * @returns {object} URLs to video files.
 	 */
-	function getVideoURLS(filePath) {		
+	function getVideoURLS(filePath) {
 		//search to see if the video is single source, meaning it's from a video published on a video page rather than through the interactive video workflow
 		if(isSingleSourceVideo ){
 			return {
@@ -157,9 +157,9 @@ function mediaDisplay(el,player){
 			'video/webm': getWebmURL(videoPaths.path),
 			'video/ogg': getOggURL(videoPaths.oggPath),
 			'video/m3u8': 'http://multimedia.guardianapis.com/interactivevideos/video.php?file='+
-	            videoPaths.filename + '&format=application/x-mpegURL&maxbitrate=2000'	
+	            videoPaths.filename + '&format=application/x-mpegURL&maxbitrate=2000'
 		};
-	    
+
 	}
 
 	/**
@@ -169,7 +169,7 @@ function mediaDisplay(el,player){
 	 */
 	function getVideoPosterImage(filePath) {
 	    var videoPaths = getVideoCDNBasePaths(filePath);
-		return videoPaths.poster; 
+		return videoPaths.poster;
 	}
 
 	init();

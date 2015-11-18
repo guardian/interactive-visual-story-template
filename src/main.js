@@ -45,7 +45,7 @@ function parseUrl(el){
         //if doesn't exist, pull from url param
         urlParams = window.location.search.substring(1).split('&');
         //set live load so that data loads directly from google spreadsheets for speedy editing
-        params.liveLoad = true;
+        params.liveLoad = false;
     }
 
     urlParams.forEach(function(param){
@@ -67,9 +67,8 @@ function loadData(params){
 
     if(!params.liveLoad){
 
-        var isLive = ( window.location.origin.search('interactive.guim.co.uk') > -1 || window.location.origin.search('gutools.co.uk') > -1) ? false : true;
-        var folder = (!isLive)? 'docsdata-test' : 'docsdata';
-
+        var isLive = window.location.origin.search('interactive.guim.co.uk') > -1 || window.location.origin.search('gutools.co.uk') > -1;
+        var folder = isLive ? 'docsdata' : 'docsdata-test';
         getJSON('https://interactive.guim.co.uk/' + folder + '/' + params.key + '.json',
             function(json){
                 console.log(json)
@@ -223,6 +222,7 @@ function render(blocks, config){
         'textBlock': require('./html/block_text.html'),
         'quoteBlock': require('./html/block_quote.html'),
         'videoBlock': require('./html/block_video.html'),
+        'loopBlock': require('./html/block_loop.html'),
         'shareBlock': require('./html/block_share.html')
 
 

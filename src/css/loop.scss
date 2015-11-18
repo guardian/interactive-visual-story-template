@@ -1,0 +1,20 @@
+.gv-loop {
+	margin-left: -20px;
+	width: calc(100% + 40px);
+}
+
+.gv-loop__video-container {
+	width: 100%;
+	padding-bottom: 40%;
+	position: relative;
+	overflow: hidden;
+	video {
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 100%;
+	    top: -200px;
+	    bottom: -200px;
+	    margin: auto;
+	}
+}
