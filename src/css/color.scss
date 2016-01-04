@@ -45,7 +45,7 @@
     }
 
     //hack put in to deal with app background colour being hard coded to white
-    .tone--news .bg-#{$color} .article__body {
+    .tone--news .bg-#{$color} .article__body, .tone--news .bg-#{$color} .article__header {
         background-color: $hex !important;
     }
 

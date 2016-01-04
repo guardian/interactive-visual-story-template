@@ -22,7 +22,7 @@ var windowPixelRatio = window.devicePixelRatio;
 var DEFAULT_BITRATE = '488k';
 var videoBitRate = DEFAULT_BITRATE;
 
-var protocol = window.location.protocol === 'file:' ? 'https://' : '//';
+var origin = (window.location.protocol === 'file:' || window.location.protocol === 'applewebdata:') ? 'https://' : '//';
 
 
 function init(dom){
@@ -177,8 +177,8 @@ function loadImage(el, bBox){
 
 	var sizes = el.getAttribute('data-image-sizes').split(',');
 	var ratio = Number(el.getAttribute('data-image-ratio'));
-	var basePath = el.getAttribute('data-url').replace('http://', protocol);
-	console.log(basePath)
+	var basePath = el.getAttribute('data-url').replace('http://', origin);
+
 	var photoSwipeList = [];
 	var sizeToLoad;
 
@@ -215,14 +215,14 @@ function loadImage(el, bBox){
 			el.setAttribute('style', 'height: auto;');
        		el.classList.remove('gv-asset'); 
        		el.classList.add('gv-loaded');
-       		if(ratio){
-       			el.onclick = function(){
-       				loadPhotoSwipe(photoSwipeList);
-       			}
-       		} else {
-       			el.classList.add('gv-image-inactive-expand'); 
-       		}
-       		
+       		// if(ratio){
+       		// 	el.onclick = function(){
+       		// 		loadPhotoSwipe(photoSwipeList);
+       		// 	}
+       		// } else {
+       		// 	el.classList.add('gv-image-inactive-expand'); 
+       		// }
+       		el.classList.add('gv-image-inactive-expand'); 
 	};  
 
 	image.src = path;
