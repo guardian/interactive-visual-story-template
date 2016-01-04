@@ -26,6 +26,10 @@
     }
 }
 
+.tone--news .text-white .article__header a, .tone--news .text-white .article__header .meta .meta__byline .byline, .tone--news .text-white .article__header .meta .meta__byline a {
+    color: #767676 !important;
+}
+
 .text-black {
 	color: #333;
 }
@@ -37,6 +41,17 @@
         .guInteractive {
             border-bottom: 1px solid rgba(255,255,255,.1);
         }
+
+    }
+
+    //hack put in to deal with app background colour being hard coded to white
+    .tone--news .bg-#{$color} .article__body {
+        background-color: $hex !important;
+    }
+
+    .tone--news .article.text-#{$color} a {
+        color: $hex;
+
     }
 
     .text-#{$color} {
