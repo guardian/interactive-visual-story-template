@@ -20,7 +20,7 @@
     }
 
     p.gv-credit-text {
-    	 @include fs-textSans(2);
+    	 @include fs-textSans(1);
     	 color: #767676;
     	
     }
@@ -52,6 +52,7 @@
 
     span.gv-photo-credit {
     	@include fs-textSans(1);
+    	 color: #767676;
     }
 
     em {
