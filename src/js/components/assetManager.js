@@ -27,12 +27,11 @@ var origin = (window.location.protocol === 'file:' || window.location.protocol =
 
 function init(dom){
 
-	//bitrate detection for video
-	if(isThereVideo){
-		setTimeout(function() {
-	        bandwidth.getSpeed(setVideoBitrate);
-	    }, 2000);
+	//hack to help video loading properly
+	if(window.innerWidth > 960){
+		videoBitRate = '2M';
 	}
+
 
 	//init photoswiper
 	initPhotoSwipe(dom);
@@ -49,6 +48,13 @@ function init(dom){
 			isThereVideo = true;
 		}
 	}
+
+	//bitrate detection for video
+	// if(isThereVideo){
+	// 	setTimeout(function() {
+	//         bandwidth.getSpeed(setVideoBitrate);
+	//     }, 2000);
+	// }
 
 	
 
@@ -300,16 +306,22 @@ function registerPlaying(player){
 }
 
 function setVideoBitrate(bitrate) {
+
 	var kbps = bitrate / 1024;
 	if (kbps >= 4068) { videoBitRate = '4M'; }
 	if (kbps < 4068) { videoBitRate  = '2M'; }
 	if (kbps < 2048) { videoBitRate  = '768k'; }
 	if (kbps < 1024) { videoBitRate  = '488k'; }
 	if (kbps < 512)  { videoBitRate  = '220k'; }
+
+}
+
+function getVideoBitRate(){
+	return videoBitRate;
 }
 
 module.exports = {
 	init: init,
 	registerPlaying: registerPlaying,
-	videoBitRate: videoBitRate
+	getVideoBitRate: getVideoBitRate
 };

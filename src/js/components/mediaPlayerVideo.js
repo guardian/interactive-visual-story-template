@@ -2,7 +2,7 @@ function mediaDisplay(el,player){
 
 	var utils = require('./utils');
 	var assetManager = require('./assetManager');
-	var videoBitRate = assetManager.videoBitRate;
+	var videoBitRate = assetManager.getVideoBitRate();
 
 	var src = el.getAttribute('data-url'),
 		isSingleSourceVideo = (src.search('cdn.theguardian.tv/interactive') > -1) ? false : true,
@@ -85,6 +85,7 @@ function mediaDisplay(el,player){
 	        console.warn('Failed to find video path and filename', videoURL);
 	        return;
 	    }
+
 
 
 	    var path = 'http://cdn.theguardian.tv/interactive/';

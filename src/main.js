@@ -151,7 +151,7 @@ function render(blocks, config){
 
     }
     //set wrapper band colour on guardian page
-    console.log(params)
+    //console.log(params)
 
     if(params.global_styles){
         if(params.global_styles.search('bg-neutral-1') >-1){
