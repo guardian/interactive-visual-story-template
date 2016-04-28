@@ -4,7 +4,7 @@ version 1.1
 ### Setup a new spreadsheet
 1. <b>Copy</b> the spreadsheet template <a href="https://docs.google.com/spreadsheets/d/1c41KsYQhUXnWUenzZqqDVPCx71PZsUsDN0BTqpEevug">here</a>
 2. Click "share" in the top right corner and <b>allow anyone on guardian.co.uk to edit</b> the spreadsheet. Also share with this email address.
-<pre><code>1003398697195-cqgtcslthr0dkbfrosueatrs5aqjev5i@developer.gserviceaccount.com
+<pre><code>find email address in visual docs tool
 </code></pre>
 3. Publish the spreadsheet: Click File > Publish to the web > Publish. Note: this is for being able to preview. There's an additional step to publish the spreadsheet onto the site, which is listed below.
 
