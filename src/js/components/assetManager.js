@@ -22,7 +22,7 @@ var windowPixelRatio = window.devicePixelRatio;
 var DEFAULT_BITRATE = '488k';
 var videoBitRate = DEFAULT_BITRATE;
 
-var origin = (window.location.protocol === 'file:' || window.location.protocol === 'applewebdata:') ? 'https://' : '//';
+var origin = 'https://';
 
 
 function init(dom){
@@ -174,7 +174,7 @@ function measureElement(el){
 
 	return {
 		inViewport: (rect.top < windowHeight ) ? true : false,
-		nearViewport: ( Math.abs(rect.top) < windowHeight * 2.5 ) ? true : false,
+		nearViewport: ( Math.abs(rect.top) < windowHeight * 4 ) ? true : false,
 		rect: rect
 	}
 }
@@ -290,7 +290,7 @@ function getZoomPhoto(photoSwipeList){
 
 function loadIframe(el){
 	el.classList.remove('gv-asset'); 
-	iframeLoader.boot(el, el.getAttribute('data-url'));	
+	iframeLoader.boot(el, el.getAttribute('data-url').replace('http://', origin));	
 }
 
 

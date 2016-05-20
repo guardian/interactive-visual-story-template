@@ -31,12 +31,12 @@ This layout tool generates a series of rows with blocks nested within each row
 
 ### Preview the visual story
 Copy the url below and replace the [SPREADSHEET] with the spreadsheet key for your project
-<pre><code>http://interactive.guim.co.uk/templates/visual-story/1.1/index.html?key=[SPREADSHEET]</code></pre>
+<pre><code>https://interactive.guim.co.uk/templates/visual-story/1.1/index.html?key=[SPREADSHEET]</code></pre>
 
 ### Create a composer asset for publication
 <b>Note that this is not intended to be used with the Composer immersive setting switched on.</b><br>
 Paste the url below into an interactive asset in composer to create the embed.
-<pre><code>http://interactive.guim.co.uk/templates/visual-story/1.1/boot.js</code></pre>
+<pre><code>https://interactive.guim.co.uk/templates/visual-story/1.1/boot.js</code></pre>
 In the alt field, add the following line replacing [SPREADSHEET] with the key you used above to create the preview link.
 <pre><code>key=[SPREADSHEET]</code></pre>
 
@@ -50,7 +50,7 @@ Create a new bookmark in your browser (Chrome!) and then save the following code
 </code></pre>
 
 ### Custom styles
-Replace the [colour name] with any of the colour names listed in <a href='http://guardian.github.io/pasteup-palette/demo/'>this palette</a>
+Replace the [colour name] with any of the colour names listed in <a href='https://guardian.github.io/pasteup-palette/demo/'>this palette</a>
 <pre><code>text-[colour name]
 text-18
 text-20
