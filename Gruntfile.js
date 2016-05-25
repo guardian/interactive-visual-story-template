@@ -1,10 +1,6 @@
 'use strict';
 var webpack = require('webpack');
-try {
-  var awsCfg = require('./cfg/aws.json');
-} catch (err) {
-  console.error('!!ERROR: Missing cfg/aws.json\n');
-}
+
 var s3Cfg = require('./cfg/s3.json');
 if (s3Cfg.path.charAt(s3Cfg.path.length - 1) !== '/') {
   s3Cfg.path += '/';
@@ -168,8 +164,7 @@ module.exports = function (grunt) {
     s3: {
       options: {
         access: 'public-read',
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID || awsCfg.AWSAccessKeyID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || awsCfg.AWSSecretKey,
+        // use credentials from local aws profile
         bucket: s3Cfg.bucket,
         gzip: true,
         gzipExclude: ['.jpg', '.gif', '.jpeg', '.png']
